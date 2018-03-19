@@ -108,7 +108,7 @@ prestart() ->
 		[_|_] ->
 			ok;
 		_ ->
-			case init:get_argument(config) of
+			case application:get_env(config) of
 				{ok, Files} ->
 					prestart1(Files);
 				_ ->
